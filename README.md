@@ -6,6 +6,8 @@ It's in Portuguese for now and it consists in a program to store and use user-ma
 
 This is a Python project to store and use user-created recipes. The project serves as a long-term test and practice for Python skills. The app can generate shopping lists for saved recipes, suggest recipes based on a list of ingredients, and provide search functionalities for recipes by name and similar recipes.
 
+There is no UI yet, but it's on it's way
+
 ## Features
 
 - Store recipes
