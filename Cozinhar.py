@@ -3,16 +3,16 @@ import Livro
 import json
 
 def listaDasCompras(str):
-    file = open("Livro_De_Receitas.json", "r")
-    for line in file:
-        x = json.loads(line)
-        if x["nome"] == str:
-            print("=" * 30)
-            print("Comprar: \n")
-            for n in x["ingredientes"]:
-                    print(f"- {n}")
-            print("=" * 30)
-            break
+    with open("Livro_De_Receitas.json", "r") as file:
+        for line in file:
+            x = json.loads(line)
+            if x["nome"] == str:
+                print("=" * 30)
+                print("Comprar: \n")
+                for n in x["ingredientes"]:
+                        print(f"- {n}")
+                print("=" * 30)
+                break
 
 def sugere(ingredientes):
     sugestoes = []

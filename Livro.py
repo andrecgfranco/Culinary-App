@@ -28,28 +28,28 @@ def show_receitas():
 
 #Guarda uma receita no Livro
 def saveReceita(r):
-    file = open("Livro_De_Receitas.json","a")
-    l = lista_receitas()
-    if not is_saved(r):
-        # Create a dictionary representing the recipe
-        recipe_data = {
-            'nome': r.name(),
-            'ingredientes': r.ingredientes()
-        }
-        file.write(json.dumps(recipe_data) + "\n")
-        print(f"Receita {r.name()} Guardada")
-    else:
-        print(f"Receita {r.name()} já estava guardada")
+    with open("Livro_De_Receitas.json", 'a') as file:
+        l = lista_receitas()
+        if not is_saved(r):
+            # Create a dictionary representing the recipe
+            recipe_data = {
+                'nome': r.name(),
+                'ingredientes': r.ingredientes()
+            }
+            file.write(json.dumps(recipe_data) + "\n")
+            print(f"Receita {r.name()} Guardada")
+        else:
+            print(f"Receita {r.name()} já estava guardada")
 
 #Verifica se uma receita ja esta guardada 
 def is_saved(r):
     name = r.name()
-    file = open("Livro_De_Receitas.json", "r")
-    for line in file:  
-        x = json.loads(line)
-        if x['nome'] == name:
-            return True
-    return False
+    with open("Livro_De_Receitas.json", 'r') as file:
+        for line in file:  
+            x = json.loads(line)
+            if x['nome'] == name:
+                return True
+        return False
 
 #Apaga todas as receitas
 def limpar_livro():
@@ -70,7 +70,6 @@ def remover_receita(nome):
 
 #Pesquisa de receitas pelo nome
 def search_receita(nome): 
-    lista = lista_receitas()
     found = False
     with open("Livro_De_Receitas.json", 'r') as file:
         for line in file:
