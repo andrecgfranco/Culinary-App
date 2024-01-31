@@ -125,4 +125,6 @@ def nova_lista():
 def nova_receita():
     nome = input("Qual é o nome da Receita? \n")
     ingredientes = nova_lista()
-    saveReceita(Receita(nome, ingredientes))
+    r = Receita(nome, ingredientes)
+    r.show_receita()
+    saveReceita(r)
