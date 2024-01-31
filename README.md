@@ -8,6 +8,7 @@ This is a Python project to store and use user-created recipes. The project serv
 
 There is no UI yet, but it's on it's way
 
+Quick Translations: Receita = Recipe, Livro = Book, Cozinhar = Cook
 ## Features
 
 - Store recipes
@@ -19,7 +20,9 @@ There is no UI yet, but it's on it's way
 ## How to Use
 
 1. **Store Recipes:**
-   - Add new recipes by providing the name and ingredient list with: Livro.nova_receita() 
+   - Add new recipes to a JSON file by providing the name and ingredient list with: Livro.nova_receita(). This will, if it's the first time create a file that represents your recipe book (Livro_De_Receitas.json) and save the recipe there, otherwise ita'll append the new recipe to the file
+
+2. **
 
 2. **Generate Shopping Lists:**
    - Get shopping lists for your saved recipes with: listaDasCompras(recipe_name)
