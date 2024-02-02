@@ -1,8 +1,11 @@
-from Receita import Receita
-import Livro
-import Cozinhar
-# Criando instâncias da classe Receita
-receita1 = Receita("Pasta Carbonara", ["Spaghetti", "Bacon", "Eggs", "Parmesan", "Pepper"])
-receita2 = Receita("Pasta Carbonara2", ["Spaghetti", "Guanchale", "Eggs", "Pecorinno", "Pepper"])
-receita3 = Receita("Frango Grelhado", ["Peito de frango", "Sal", "Pimenta", "Azeite"])
+from Recipe import Recipe
+import Book
+import Cook
 
+recipe1 = Recipe("Pasta Carbonara", ["Spaghetti", "Bacon", "Eggs", "Parmesan", "Pepper"])
+recipe2 = Recipe("Pasta Carbonara2", ["Spaghetti", "Guanchale", "Eggs", "Pecorinno", "Pepper"])
+recipe3 = Book.to_recipe({"name": "Pasta Bolognese", "ingredients": ["Spaghetti", "Ground Beef", "Tomato", "Olive oil"]})
+
+Book.save_recipe(recipe1)
+Book.save_recipe(recipe2)
+Book.save_recipe(recipe3)
