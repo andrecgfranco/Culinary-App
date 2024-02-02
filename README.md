@@ -19,7 +19,7 @@ There is no UI yet, but it's on it's way
 ## How to Use
 
 1. **Store Recipes:**
-   - Add new recipes to a JSON file by providing the name and ingredient list with: Book.new_recipe(). This will, if it's the first time, create a file that represents your recipe book (Livro_De_Receitas.json) and save the recipe there, otherwise it'll append the new recipe to the file
+   - Add new recipes to a JSON file by providing the name and ingredient list with: Book.new_recipe(). This will, if it's the first time, create a file that represents your recipe book (Book_Of_Recipes.json) and save the recipe there, otherwise it'll append the new recipe to the file
 
 2. **See Recipes:**
    - See a recipe with: Recipe.show_recipe()
