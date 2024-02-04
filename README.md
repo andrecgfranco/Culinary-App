@@ -13,7 +13,7 @@ There is no UI yet, but it's on it's way
 - Store recipes
 - Generate shopping lists
 - Suggest recipes based on ingredients
-- Search recipes by name
+- Search recipes by name and ingredients
 - Find similar recipes
 
 ## How to Use
@@ -32,8 +32,9 @@ There is no UI yet, but it's on it's way
    - Receive recipe suggestions based on available ingredients with: suggest(ingredients) or suggest(new_list())
    - new_list() creates a list of strings that are taken as ingredients, by asking for input one by one and finishing if the input is empty
 
-4. **Search by Name:**
+4. **Search:**
    - Search for specific recipes using their names with: search_recipe(recipe_name)
+   - Search for recipes by with given ingredients (asked as input): search_by_ingredients()
 
 5. **Find Similar Recipes:**
    - Discover recipes similar to a given one with: search_similar(recipe)
