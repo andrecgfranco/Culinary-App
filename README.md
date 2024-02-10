@@ -31,10 +31,12 @@ There is no UI yet, but it's on it's way
 3. **Recipe Suggestions:**
    - Receive recipe suggestions based on available ingredients with: suggest(ingredients) or suggest(new_list())
    - new_list() creates a list of strings that are taken as ingredients, by asking for input one by one and finishing if the input is empty
+   - INGREDIENTS ARE NOT CASE SENSITIVE
 
 4. **Search:**
    - Search for specific recipes using their names with: search_recipe(recipe_name)
    - Search for recipes by with given ingredients (asked as input): search_by_ingredients()
+   - INGREDIENTS ARE NOT CASE SENSITIVE
 
 5. **Find Similar Recipes:**
    - Discover recipes similar to a given one with: search_similar(recipe)
