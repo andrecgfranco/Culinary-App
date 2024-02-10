@@ -16,8 +16,10 @@ def shopping_list(str):
 
 def suggest(ingredients):
     suggest = []
+    ingredients_lower = [ing.lower() for ing in ingredients]
     for r in Book.list_recipes():
-        if all(ing in ingredients for ing in r.get_ingredients()):
+        r_lower = [ing.lower() for ing in r.get_ingredients()]
+        if all(ing in ingredients_lower for ing in r_lower):
             suggest.append(r)
     if not suggest: 
         print("I've got no suggestions for these ingredients")

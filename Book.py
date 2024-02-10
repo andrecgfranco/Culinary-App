@@ -99,25 +99,27 @@ def search_similar(r):
         print("Couldn't find similar enough recipes")
 
 def search_by_ingredient(): 
-    list = new_list()
+    ing_list = new_list()
+    ingredients_lower = [ing.lower() for ing in ing_list]
     recipes = []
     print("Search: \n")
     with open("Book_Of_recipes.json", 'r') as file:
         for line in file:
             recipe_dict = json.loads(line)
-            if all(ing in recipe_dict["ingredients"] for ing in list):
+            r_lower = [ing.lower() for ing in recipe_dict["ingredients"]]
+            if all(ing in r_lower for ing in ingredients_lower):
                 recipes.append(to_recipe(recipe_dict))
     if recipes: 
-        print(f"This are the results with:{list}")
+        print(f"This are the results with:{ing_list}")
         for r in recipes:
             r.show_recipe()
     else: 
-        print("No results for such ingredients")
+        print(f"No results with:{ing_list}")
 
 #Verifica quantos ingredients em comum entre duas Recipes
 def in_common(r1, r2):
-    i1 = r1.get_ingredients()
-    i2 = r2.get_ingredients()
+    i1 = [ing.lower() for ing in r1.get_ingredients()]
+    i2 = [ing.lower() for ing in r2.get_ingredients()]
     n = 0
     for ing in i1:
         if ing in i2:
